@@ -16,34 +16,9 @@ typedef struct node
 }Node;
 
 
-Node *list_add_tail(Node **tail, int data)
-{
-    Node * node = (Node *)malloc(sizeof(Node));
-    node->data = data;
-    node->next = NULL;
 
-    if(NULL == *tail)
-    {
-        *tail = node;
-        return *tail;
-    }
 
-    (*tail)->next = node;
-    return (*tail)->next;
-}
 
-int list_printf(Node *head)
-{
-    Node *tmp = head;
-
-    while(NULL != tmp)
-    {
-        printf("list data = %d\n", tmp->data);    
-        tmp = tmp->next;
-    }
-
-    return 0;    
-}
 
 /**
  * @description: 找到倒数第k个节点
